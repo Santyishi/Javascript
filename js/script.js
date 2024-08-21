@@ -2,7 +2,7 @@
 let carrito = [];
 
 // Función para agregar un producto al carrito
-function agregarProducto(nombre,precio) { 
+function agregaryValidarProducto(nombre,precio) { 
     
     let precioValido = precio;
 
@@ -46,7 +46,7 @@ let agregarOtro;
 do{
     const nombre = prompt("Ingrese el nombre del grano de café:");
     const precio = parseInt(prompt("Ingrese el precio del grano de café:"));
-    agregarProducto(nombre,precio);
+    agregaryValidarProducto(nombre,precio);
     agregarOtro=prompt("¿Deseas agregar otro?");
 }while(agregarOtro == 'si' || agregarOtro == 'Si');
 
@@ -56,6 +56,8 @@ let Vaciarcarro =prompt("¿deseas Vaciar el carrito?");
 if(Vaciarcarro == 'si'){
     vaciarCarrito(); 
     mostrarCarritoYCalcularTotal(); 
+}else{
+    alert("Muchas gracias por su compra");
 }
 
 
