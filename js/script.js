@@ -21,43 +21,80 @@ function agregaryValidarProducto(nombre,precio) {
 }
 
 // Función para mostrar los productos en el carrito y el total
-function mostrarCarritoYCalcularTotal() {
+function mostrarCarritoYCalcularTotal(mostrarTotal = true) {
     if (carrito.length === 0) {
         console.log("El carrito está vacío.");
         return;
     }
     
-    let total = 0;
     console.log("Productos en el carrito:");
+    let total = 0;
+
     for (let i = 0; i < carrito.length; i++) {
         console.log(carrito[i].nombre, ":", carrito[i].precio);
         total += carrito[i].precio;
     }
-    console.log("Total a pagar:", total);
+
+    if (mostrarTotal) {
+        alert("Total a pagar: "+ total);
+    }
 }
+function eliminarProducto(nombre) {
+    const indice = carrito.findIndex(producto => producto.nombre.toLowerCase() == nombre.toLowerCase());
+
+    if (indice !== -1) {
+        carrito.splice(indice, 1);
+        console.log(nombre, "ha sido eliminado del carrito.");
+    } else {
+        console.log("El producto no se encuentra en el carrito.");
+    }
+}
+
 // Función para vaciar el carrito
-function vaciarCarrito() {
-    carrito = [];
-    console.log("El carrito ha sido vaciado.");
+function vaciarCarrito(opcion) {
+    if (carrito.length === 0) {
+        console.log("El carrito ya está vacío.");
+        return;
+    }
+
+    if (opcion === 'eliminar') {
+        const nombreEliminar = prompt("Ingrese el nombre del producto que desea eliminar:");
+        eliminarProducto(nombreEliminar);
+    } else if (opcion === 'vaciar') {
+        carrito = [];
+        console.log("El carrito ha sido vaciado.");
+    } else {
+        alert("No se realizó ninguna acción, Muchas gracias por su compra");
+    }
 }
+
 
 let agregarOtro;
 
-do{
-    const nombre = prompt("Ingrese el nombre del grano de café:");
-    const precio = parseInt(prompt("Ingrese el precio del grano de café:"));
-    agregaryValidarProducto(nombre,precio);
-    agregarOtro=prompt("¿Deseas agregar otro?");
-}while(agregarOtro == 'si' || agregarOtro == 'Si');
+function iniciarAplicacion() {
+    alert("¡Bienvenido a la tienda de café!");
 
-mostrarCarritoYCalcularTotal(); 
+    let agregarOtro;
 
-let Vaciarcarro =prompt("¿deseas Vaciar el carrito?");
-if(Vaciarcarro == 'si'){
-    vaciarCarrito(); 
-    mostrarCarritoYCalcularTotal(); 
-}else{
-    alert("Muchas gracias por su compra");
+    do {
+        const nombre = prompt("Ingrese el nombre del grano de café:");
+        const precio = parseInt(prompt("Ingrese el precio del grano de café:"));
+        agregaryValidarProducto(nombre, precio);
+        agregarOtro = confirm("¿Deseas agregar otro grano de café?");
+    } while (agregarOtro);
+
+    const mostrarTotal = confirm("¿Deseas ver el total de la compra?");
+    mostrarCarritoYCalcularTotal(mostrarTotal);
+
+    const vaciarCarro = prompt("¿Deseas vaciar el carrito completamente o eliminar un producto específico? (vaciar/eliminar)").toLowerCase();
+    vaciarCarrito(vaciarCarro);
+    if(vaciarCarro =='eliminar'){
+        const mostrarTotal = confirm("¿Deseas ver el total de la compra nuevamente?");
+        mostrarCarritoYCalcularTotal(mostrarTotal);
+    }
+    alert("Muchas gracias, nos vemosss");
 }
 
+// Iniciar la aplicación
+iniciarAplicacion();
 
