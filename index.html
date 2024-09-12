@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/script.js"></script>
-    <title>Document</title>
+    <title>Santyishi Shop Coffee</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
-    <h1 style="text-align: center;">Proyecto</h1>
-    <p>Es un carrito de compras de cafe donde eliges el cafe y le asignas un precio a cada uno,contiene funciones de agregar/validar productos ,vaciar el carrito y mostrar el total de compras</p>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>Santyishi Coffee Shop</h1>
+            </div>
+            <div class="cart">
+                <button id="carritoBtn">Carrito <span id="carritoCantidad">0</span></button>
+                <div class="carrito-dropdown" id="carritoDropdown">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre del producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carritoTableBody">
+                            <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                    <div id="totalContainer">
+                        <p id="total">Total: $0</p>
+                        <button id="vaciarCarrito">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2>Lista de Cafés</h2>
+        <div id="cafes">
+            <!-- Los cafés se agregarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <div id="mensaje"></div>
 </body>
 </html>
