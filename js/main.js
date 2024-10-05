@@ -1,7 +1,7 @@
 let cafesDisponibles = [];
 
 function cargarCafes() {
-    fetch('../data/cafes.JSON')
+    fetch('./data/cafes.JSON')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al cargar los cafés');
