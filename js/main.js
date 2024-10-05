@@ -1,9 +1,8 @@
+
 let cafesDisponibles = [];
 $(document).ready(function() {
     cargarCafes();
-
 });
-
 
 function cargarCafes() {
     fetch('../data/cafes.JSON')
@@ -24,7 +23,6 @@ function cargarCafes() {
 function mostrarCafes() {
     const cafesDiv = $('#cafes');
     cafesDiv.empty();
-
     cafesDisponibles.forEach(cafe => {
         if (!cafe.premium) {
             const cafeDiv = $(`
@@ -43,7 +41,6 @@ function mostrarCafes() {
 function mostrarCafesPremium() {
     const cafesPremiumDiv = $('#cafesPremium');
     cafesPremiumDiv.empty();
-
     cafesDisponibles.forEach(cafe => {
         if (cafe.premium) {
             const cafeDiv = $(`
@@ -58,8 +55,3 @@ function mostrarCafesPremium() {
         }
     });
 }
-
-$(document).ready(function() {
-    cargarCafes();
-
-});
