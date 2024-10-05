@@ -1,8 +1,4 @@
-
 let cafesDisponibles = [];
-$(document).ready(function() {
-    cargarCafes();
-});
 
 function cargarCafes() {
     fetch('../data/cafes.JSON')
@@ -55,3 +51,7 @@ function mostrarCafesPremium() {
         }
     });
 }
+
+$(document).ready(function() {
+    cargarCafes();
+});
