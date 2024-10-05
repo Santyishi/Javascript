@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santyishi Shop Coffee</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script defer src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/carrito.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,8 +18,8 @@
                 <h1>Santyishi Coffee Shop</h1>
             </div>
             <div class="cart">
-                <button id="carritoBtn">Carrito <span id="carritoCantidad">0</span></button>
-                <div class="carrito-dropdown" id="carritoDropdown">
+                <button id="carritoBtn">Café en Carrito <span id="carritoCantidad">0</span></button>
+                <div class="carrito-dropdown" id="carritoDropdown" style="display:none;">
                     <table>
                         <thead>
                             <tr>
@@ -25,12 +29,44 @@
                             </tr>
                         </thead>
                         <tbody id="carritoTableBody">
-                            <!-- Los productos del carrito se agregarán aquí dinámicamente -->
+                            <tr>
+                                <td>Nombre del Café</td>
+                                <td>
+                                    <div class="cantidad-container">
+                                        <button class="btn-cantidad" data-accion="menos">-</button>
+                                        <span class="cantidad">1</span>
+                                        <button class="btn-cantidad" data-accion="mas">+</button>
+                                    </div>
+                                </td>
+                                <td>$10</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div id="totalContainer">
                         <p id="total">Total: $0</p>
-                        <button id="vaciarCarrito">Vaciar Carrito</button>
+                    </div>
+                    <div id="mensajeError" style="color: red; display: none;"></div>
+                    <div class="button-container">
+                        <button id="vaciarCarrito" class="btn-carrito">Vaciar Carrito</button>
+                        <button id="realizarCompra" class="btn-carrito">Realizar Compra</button>
+                    </div>
+
+                    <div id="formularioCompra" style="display: none;">
+                        <h3>Completa tus datos para finalizar la compra</h3>
+                        <form id="compraForm">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" required>
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="email" required>
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" required>
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" id="direccion" required>
+                            <button type="submit" class="btn-carrito" id="compraRealizada">Comprar</button>
+                        </form>
+                    </div>
+                    <div id="mensajeCompra" style="display: none;">
+                        <h3>¡Has realizado la compra correctamente! Que disfrutes de tu café.</h3>
                     </div>
                 </div>
             </div>
@@ -38,10 +74,15 @@
     </header>
 
     <main>
-        <h2>Lista de Cafés</h2>
-        <div id="cafes">
-            <!-- Los cafés se agregarán aquí dinámicamente -->
-        </div>
+        <section id="cafesSection">
+            <h2>Cafés Clásicos</h2>
+            <div id="cafes" class="cafes-container"></div>
+        </section>
+    
+        <section id="cafesPremiumSection">
+            <h2>Cafés Premium</h2>
+            <div id="cafesPremium" class="cafes-container"></div>
+        </section>
     </main>
 
     <div id="mensaje"></div>

@@ -1,14 +1,14 @@
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #F5F5DC; 
+    background-color: #f7f7cf;
     margin: 0;
     padding: 0;
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
 h1, h2, p {
-    color: #6B4226; 
+    color: #6B4226;
+    text-align: center;
 }
 
 header {
@@ -20,12 +20,11 @@ header {
     z-index: 1;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F5F5DC; 
+    background-color: #F5F5DC;
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -33,17 +32,17 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #6B4226; 
+    border-bottom: 1px solid #6B4226;
 }
 
 .logo h1 {
     font-size: 1.5rem;
-    color: #6B4226; 
+    color: #583500;
 }
 
 .cart {
     position: relative;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 #carritoBtn {
@@ -68,9 +67,11 @@ header {
     background-color: #FFFFFF;
     border: 1px solid #6B4226;
     border-radius: 5px;
-    width: 400px;
+    width: 500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    max-height: 400px; /* Limitar altura del carrito */
+    overflow-y: auto; /* Activar scroll cuando se excede la altura */
 }
 
 .carrito-dropdown table {
@@ -80,7 +81,7 @@ header {
 }
 
 .carrito-dropdown th, .carrito-dropdown td {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
@@ -105,36 +106,41 @@ header {
     font-size: 1rem;
 }
 
-.carrito-item button:hover {
-    background-color: #5c3a1f; 
-}
-
-#vaciarCarrito {
+#vaciarCarrito, #realizarCompra, #compraRealizada {
     background-color: #D9534F;
     color: #FFFFFF;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%;
+    width: 48%;
+    display: inline-block;
 }
 
-#vaciarCarrito:hover {
-    background-color: #c9302c; 
+#realizarCompra, #compraRealizada {
+    background-color: #28a745; /* Verde para "realizar compra" */
 }
 
 #totalContainer {
-    text-align: center;
-    padding: 1rem;
-    border-top: 1px solid #6B4226;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
 }
 
+#total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
 
-#cafes {
+#cafes, #cafesPremium {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .cafe {
@@ -145,21 +151,36 @@ header {
     text-align: center;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    transition: transform 0.3s ease;
+}
+
+.cafe img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
 
 .cafe h3 {
-    color: #6B4226;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cafe p {
-    color: #6B4226;
-    font-size: 1rem;
-    margin-bottom: 10px;
+    margin: 0;
+    flex-grow: 1;
 }
 
 .cafe button {
+    margin-top: auto;
     background-color: #6B4226;
     color: #FFFFFF;
     border: none;
@@ -170,26 +191,43 @@ header {
 }
 
 .cafe button:hover {
-    background-color: #5c3a1f; 
+    background-color: #5c3a1f;
 }
 
-#mostrarTotal, #ocultarTotal {
-    background-color: #6B4226;
-    color: #FFFFFF;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 10px;
-    font-size: 1rem;
+.cafe:hover {
+    transform: scale(1.05);
 }
 
-#mostrarTotal:hover, #ocultarTotal:hover {
-    background-color: #5c3a1f; 
+#cafesPremium .cafe {
+    color: antiquewhite;
+    border-color: #6B4226;
+    background-color: #1a1311;
+    box-shadow: 0 4px 8px rgba(110, 78, 50, 0.5);
+}
+
+#cafesPremium .cafe h3,
+#cafesPremium .cafe p {
+    color: antiquewhite;
+}
+
+#cafesSection h2, #cafesPremiumSection h2 {
+    text-align: center;
+    border: 2px dotted #6B4226;
+    border-radius: 20px;
+    padding: 10px;
+    color: #6B4226;
+    margin-bottom: 20px;
 }
 
 #mensaje {
     color: #6B4226;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#mensajeError {
+    color: #D9534F; /* Rojo para el mensaje de error */
     font-weight: bold;
     margin-top: 10px;
     text-align: center;
@@ -204,11 +242,69 @@ header {
         width: 90%;
     }
 
-    #cafes {
+    #cafes, #cafesPremium {
         flex-direction: column;
     }
 
     .cafe {
         width: 100%;
     }
+}
+
+#formularioCompra form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#formularioCompra label {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #3b2c1a;
+}
+
+#formularioCompra input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    color: #3b2c1a;
+}
+
+#formularioCompra input:focus {
+    outline: none;
+    border-color: #6d4c41;
+}
+
+#mensajeCompra {
+    text-align: center;
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.carrito-item .cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carrito-item .cantidad button {
+    margin: 0 5px;
 }

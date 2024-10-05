@@ -1,0 +1,109 @@
+[
+    {
+        "nombre": "Café Blue Mountain de Jamaica",
+        "descripcion": "Conocido por su sabor suave y acidez ligera, cultivado en las montañas de Jamaica.",
+        "precio": 45.0,
+        "imagen":"../assets/images/Jamaica-blue-mountain-packaging-pr.png", 
+        "premium": true
+    },
+    {
+        "nombre": "Café Geisha de Panamá",
+        "descripcion": "Famoso por su perfil floral y afrutado, a menudo con notas de jazmín y frutas tropicales.",
+        "precio": 50.0,
+        "imagen":"../assets/images/Geisha-Packaging-pr.png",
+        "premium": true
+
+    },
+    {
+        "nombre": "Café Tarrazú de Costa Rica",
+        "descripcion": "Cuerpo medio con acidez brillante, con notas de frutas y nueces.",
+        "precio": 35.0,
+        "imagen":"../assets/images/Costarica-Packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café de Nicaragua",
+        "descripcion": "Suave y dulce, con notas de chocolate y caramelo, y una acidez equilibrada.",
+        "precio": 28.0,
+        "imagen":"../assets/images/Nicaragua-Packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Mocha de Yemen",
+        "descripcion": "Sabor intenso con notas de chocolate y especias, cultivado con métodos tradicionales.",
+        "precio": 29.5,
+        "imagen":"../assets/images/Mocha-packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Sidamo de Etiopía",
+        "descripcion": "Afrutado y floral, con una acidez brillante y sabores complejos.",
+        "precio": 28.5,
+        "imagen":"../assets/images/Ethiopia-Packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Monsooned Malabar de India",
+        "descripcion": "Terroso y suave, con baja acidez, envejecido durante la temporada de monzones.",
+        "precio": 44.0,
+        "imagen":"../assets/images/Monsooned-Packaging-pr.png",
+        "premium": true
+    },
+    {
+       
+        "nombre": "Café de Kenia",
+        "descripcion": "Conocido por su acidez brillante y sabores afrutados, a menudo presenta notas de bayas y un cuerpo completo.",
+        "precio": 35.0,
+        "imagen":"../assets/images/Kenia-packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café de Honduras",
+        "descripcion": "Sabor dulce y suave, con notas de caramelo y una acidez balanceada. Ideal para disfrutar en cualquier momento del día.",
+        "precio": 30.0,
+        "imagen":"../assets/images/Honduras-packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Peaberry de Tanzania",
+        "descripcion": "Afrutado con una acidez brillante, de cuerpo completo y con un final limpio.",
+        "precio": 47.5,
+        "imagen":"../assets/images/Peaberry-Packaging-pr.png",
+        "premium": true
+    },
+    {
+        "nombre": "Café Santos de Brasil",
+        "descripcion": "Sabor suave con baja acidez y notas de chocolate y nueces.",
+        "precio": 25.75,
+        "imagen":"../assets/images/Brazilian-Packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Mandheling de Sumatra",
+        "descripcion": "Cuerpo completo con baja acidez, con sabores terrosos y chocolateados.",
+        "precio": 31.25,
+        "imagen":"../assets/images/Sumatra-packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Supremo de Colombia",
+        "descripcion": "Sabor equilibrado con acidez suave y un toque de dulzura.",
+        "precio": 29.75,
+        "imagen":"../assets/images/Colombia-packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Antigua de Guatemala",
+        "descripcion": "Cuerpo completo con un sabor rico, con notas de cacao y especias.",
+        "precio": 32.5,
+        "imagen":"../assets/images/Guatemala-Packaging.png",
+        "premium": false
+    },
+    {
+        "nombre": "Café Kona de Hawái",
+        "descripcion": "Suave y rico con una acidez suave, cultivado en suelo volcánico.",
+        "precio": 49.75,
+        "imagen":"../assets/images/Kona-Packaging-pr.png",
+        "premium": true
+    }
+]
