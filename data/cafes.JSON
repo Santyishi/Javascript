@@ -3,14 +3,14 @@
         "nombre": "Café Blue Mountain de Jamaica",
         "descripcion": "Conocido por su sabor suave y acidez ligera, cultivado en las montañas de Jamaica.",
         "precio": 45.0,
-        "imagen":"./assets/images/Jamaica-blue-mountain-packaging-pr.png", 
+        "imagen":"/assets/images/Jamaica-blue-mountain-packaging-pr.png", 
         "premium": true
     },
     {
         "nombre": "Café Geisha de Panamá",
         "descripcion": "Famoso por su perfil floral y afrutado, a menudo con notas de jazmín y frutas tropicales.",
         "precio": 50.0,
-        "imagen":"../assets/images/Geisha-Packaging-pr.png",
+        "imagen":"/assets/images/Geisha-Packaging-pr.png",
         "premium": true
 
     },
@@ -18,14 +18,14 @@
         "nombre": "Café Tarrazú de Costa Rica",
         "descripcion": "Cuerpo medio con acidez brillante, con notas de frutas y nueces.",
         "precio": 35.0,
-        "imagen":"../assets/images/Costarica-Packaging.png",
+        "imagen":"/assets/images/Costarica-Packaging.png",
         "premium": false
     },
     {
         "nombre": "Café de Nicaragua",
         "descripcion": "Suave y dulce, con notas de chocolate y caramelo, y una acidez equilibrada.",
         "precio": 28.0,
-        "imagen":"../assets/images/Nicaragua-Packaging.png",
+        "imagen":"/assets/images/Nicaragua-Packaging.png",
         "premium": false
     },
     {
