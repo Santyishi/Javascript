@@ -1,7 +1,8 @@
 let cafesDisponibles = [];
 
 function cargarCafes() {
-    fetch('./data/cafes.JSON')
+    fetch('https://santyishi.github.io/Javascript/data/cafes.json'
+)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al cargar los cafés');
