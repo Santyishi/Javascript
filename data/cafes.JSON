@@ -3,7 +3,7 @@
         "nombre": "Café Blue Mountain de Jamaica",
         "descripcion": "Conocido por su sabor suave y acidez ligera, cultivado en las montañas de Jamaica.",
         "precio": 45.0,
-        "imagen":"../assets/images/Jamaica-blue-mountain-packaging-pr.png", 
+        "imagen":"./assets/images/Jamaica-blue-mountain-packaging-pr.png", 
         "premium": true
     },
     {
